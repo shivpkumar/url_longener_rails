@@ -1,0 +1,24 @@
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<h3><a href="mailto:#{@user.email}"></a></h3>
+
+<h4>Here's a list of all your brilliant, longened URLs:</h4>
+<ul>
+  <% @urls.each do |url| %>
+    <li>
+      <a href="<%= url.original_url %>">
+        <%= url.original_url %>
+      </a>
+    </li>
+    <li>
+      <a href="<%= "/url/#{url.long_url_hash}" %>">
+        <%= "http://localhost.9393/url/#{url.long_url_hash}" %>
+      </a>
+    </li>
+    <li>
+      <% if same_user?(@user) %>
+        Click count: <%= url.click_count %>
+      <% end %>
+    </li>
+    <br />
+  <% end %>
+</ul>

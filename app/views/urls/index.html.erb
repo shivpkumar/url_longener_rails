@@ -1,0 +1,27 @@
+<h1>URLs too short?</h1>
+<h2>NOT A PROBLEM!!</h2>
+<h2>We'll longen that URL for you. Just enter it here:</h2>
+
+<%= form_for @url do |f| %>
+  <%= f.text_field :original_url %>
+  <%= f.submit "LONGEN IT" %>
+<% end %>
+
+<h3>Brilliant longened URLs of the past</h3>
+<ul>
+  <% @urls.each do |url| %>
+    <li>
+      <!-- <%= link_to url.original_url, url_path(url.id) %> -->
+      <a href="<%= url.original_url %>">
+        <%= url.original_url %>
+      </a>
+    </li>
+    <li>
+      <!-- <%= link_to "http://localhost.9393/url/#{url.long_url_hash}", long_url_path(url.id) %> -->
+      <a href="<%= "/url/#{url.long_url_hash}" %>">
+        <%= "http://localhost.9393/url/#{url.long_url_hash}" %>
+      </a>
+    </li>
+    <br />
+  <% end %>
+</ul>

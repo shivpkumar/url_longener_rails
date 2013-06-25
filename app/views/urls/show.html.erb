@@ -1,0 +1,16 @@
+<h1>Congrats. You now have a long URL.</h1>
+<h2>(No guarantees, though, if your original URL was really long.)</h2>
+
+<p>Longened URL: 
+  <a href="<%= "#{@url.long_url_hash}" %>">
+    <%= "http://localhost.9393/#{@url.long_url_hash}" %>
+  </a>
+</p>
+
+<p>Original URL: 
+  <a href="<%= @url.original_url %>">
+    <%= @url.original_url %>
+  </a>
+</p>
+
+<h1><%= link_to "HOME", root_path %></h1>
